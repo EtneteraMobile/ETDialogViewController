@@ -16,19 +16,20 @@ open class DialogViewController: UIViewController {
     public let dialogView = UIView()
 
     // MARK: private
-    private let style: StyleConfig
+    private let style: DialogStyleConfig
     private let backgroundView: UIVisualEffectView
     private let containerView = UIView()
     private let contentContainerView = UIView()
     private let contentScrollView = UIScrollView()
     private let titleLabel = UILabel()
     private let buttonContainerView = UIView()
-    private let contentInsets = UIEdgeInsetsMake(10, 10, 10, 10)
+    private let contentInsets = UIEdgeInsetsMake(20, 20, 20, 20)
+    private let thinLine = 1 / UIScreen.main.scale
 
 
     // Mark: - Initialization
 
-    public init(style: StyleConfig) {
+    public init(style: DialogStyleConfig) {
         self.style = style
         self.backgroundView = UIVisualEffectView(effect: style.blurEffect)
         super.init(nibName: nil, bundle: nil)
@@ -66,10 +67,15 @@ open class DialogViewController: UIViewController {
     }
 
     private func setupTitleLabel() {
+        titleLabel.textColor = style.titleStyle.color
+        titleLabel.font = style.titleStyle.font
+        titleLabel.numberOfLines = 0
+        titleLabel.textAlignment = .center
         containerView.addSubview(titleLabel)
         titleLabel.translatesAutoresizingMaskIntoConstraints = false
         titleLabel.topAnchor.constraint(equalTo: containerView.topAnchor).isActive = true
         titleLabel.centerXAnchor.constraint(equalTo: containerView.centerXAnchor).isActive = true
+        titleLabel.widthAnchor.constraint(equalTo: containerView.widthAnchor).isActive = true
     }
 
     private func setupContentScrollView() {
@@ -78,7 +84,7 @@ open class DialogViewController: UIViewController {
         dialogView.addSubview(contentContainerView)
         contentContainerView.translatesAutoresizingMaskIntoConstraints = false
         contentContainerView.translatesAutoresizingMaskIntoConstraints = false
-        contentContainerView.topAnchor.constraint(equalTo: titleLabel.bottomAnchor).isActive = true
+        contentContainerView.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 5).isActive = true
         contentContainerView.leadingAnchor.constraint(equalTo: containerView.leadingAnchor).isActive = true
         contentContainerView.trailingAnchor.constraint(equalTo: containerView.trailingAnchor).isActive = true
 
@@ -93,7 +99,7 @@ open class DialogViewController: UIViewController {
     private func setupButtonContainer() {
         containerView.addSubview(buttonContainerView)
         buttonContainerView.translatesAutoresizingMaskIntoConstraints = false
-        buttonContainerView.topAnchor.constraint(equalTo: contentScrollView.bottomAnchor).isActive = true
+        buttonContainerView.topAnchor.constraint(equalTo: contentScrollView.bottomAnchor, constant: 5).isActive = true
         buttonContainerView.leadingAnchor.constraint(equalTo: dialogView.leadingAnchor).isActive = true
         buttonContainerView.trailingAnchor.constraint(equalTo: dialogView.trailingAnchor).isActive = true
         buttonContainerView.bottomAnchor.constraint(equalTo: dialogView.bottomAnchor).isActive = true
@@ -112,10 +118,11 @@ open class DialogViewController: UIViewController {
         dialogView.backgroundColor = style.backgroundColor
         dialogView.layer.cornerRadius = style.cornerRadius
         dialogView.layer.shadowColor = UIColor.black.cgColor
-        dialogView.layer.shadowOpacity = 0.8
+        dialogView.layer.shadowOpacity = 1
         dialogView.layer.shadowOffset = .zero
-        dialogView.layer.shadowRadius = 30
+        dialogView.layer.shadowRadius = 10
         dialogView.clipsToBounds = true
+        dialogView.layer.opacity = style.opacity
 
         backgroundView.contentView.addSubview(dialogView)
         dialogView.translatesAutoresizingMaskIntoConstraints = false
@@ -137,10 +144,22 @@ open class DialogViewController: UIViewController {
         let buttons = buttons.map { config -> UIButton in // Will be replaced with ETButton
             let button = UIButton()
             button.setTitle(config.title, for: .normal)
+            switch config.style {
+            case .normal:
+                button.titleLabel?.font = style.buttonStyle.titleFont
+                button.setTitleColor(style.buttonStyle.titleColor, for: .normal)
+            case .preferred:
+                button.titleLabel?.font = style.buttonStyle.preferredFont
+                button.setTitleColor(style.buttonStyle.preferredColor, for: .normal)
+            case .destructive:
+                button.titleLabel?.font = style.buttonStyle.destructiveFont
+                button.setTitleColor(style.buttonStyle.destructiveColor, for: .normal)
+            }
+            button.isEnabled = config.enabled
             return button
         }
 
-        buttonContainerView.backgroundColor = .black
+        buttonContainerView.backgroundColor = style.buttonStyle.borderColor
         let stackView = UIStackView()
         buttonContainerView.addSubview(stackView)
         stackView.translatesAutoresizingMaskIntoConstraints = false
@@ -152,10 +171,10 @@ open class DialogViewController: UIViewController {
         stackView.distribution = .fillEqually
 
         buttons.forEach {
-            $0.backgroundColor = .green
+            $0.backgroundColor = style.buttonStyle.backgroundColor
             stackView.addArrangedSubview($0)
             $0.translatesAutoresizingMaskIntoConstraints = false
-            $0.heightAnchor.constraint(equalToConstant: 50).isActive = true
+            $0.heightAnchor.constraint(equalToConstant: 40).isActive = true
         }
 
         if buttons.count == 1 {
@@ -165,19 +184,19 @@ open class DialogViewController: UIViewController {
             buttons.first?.bottomAnchor.constraint(equalTo: buttonContainerView.bottomAnchor).isActive = true
         } else if isWidth(of: buttons, largerThan: style.maxContainerSize.width / CGFloat(buttons.count)) {
             stackView.axis = .vertical
-            stackView.spacing = 1
+            stackView.spacing = thinLine
             buttons.first?.translatesAutoresizingMaskIntoConstraints = false
-            buttons.first?.topAnchor.constraint(equalTo: stackView.topAnchor, constant: 1).isActive = true
+            buttons.first?.topAnchor.constraint(equalTo: stackView.topAnchor, constant: thinLine).isActive = true
             buttons.forEach {
                 $0.translatesAutoresizingMaskIntoConstraints = false
                 $0.widthAnchor.constraint(equalTo: buttonContainerView.widthAnchor).isActive = true
             }
         } else {
             stackView.axis = .horizontal
-            stackView.spacing = 1
+            stackView.spacing = thinLine
             buttons.forEach {
                 $0.translatesAutoresizingMaskIntoConstraints = false
-                $0.topAnchor.constraint(equalTo: stackView.topAnchor, constant: 1).isActive = true
+                $0.topAnchor.constraint(equalTo: stackView.topAnchor, constant: thinLine).isActive = true
             }
         }
     }
@@ -190,8 +209,8 @@ open class DialogViewController: UIViewController {
         let heightConstraint = contentView.heightAnchor.constraint(equalTo: contentContainerView.heightAnchor)
         heightConstraint.priority = .defaultLow
         heightConstraint.isActive = true
-        contentView.widthAnchor.constraint(equalTo: contentContainerView.widthAnchor).isActive = true
-
+        contentView.leadingAnchor.constraint(equalTo: contentContainerView.leadingAnchor).isActive = true
+        contentView.trailingAnchor.constraint(equalTo: contentContainerView.trailingAnchor).isActive = true
 
     }
 

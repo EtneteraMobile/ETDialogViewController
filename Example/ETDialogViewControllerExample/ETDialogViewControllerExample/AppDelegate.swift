@@ -21,7 +21,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window!.rootViewController = homeViewController
         window!.makeKeyAndVisible()
 
-        let style = StyleConfig(backgroundColor: .white, cornerRadius: 10, blurEffect: UIBlurEffect(style: .dark))
+        let style = DialogStyleConfig()
         let alertViewController = AlertViewController(style: style)
         alertViewController.modalPresentationStyle = .overCurrentContext
         homeViewController.present(alertViewController, animated: true, completion: nil)
