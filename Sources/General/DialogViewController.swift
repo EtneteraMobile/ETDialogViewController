@@ -146,14 +146,14 @@ open class DialogViewController: UIViewController {
             button.setTitle(config.title, for: .normal)
             switch config.style {
             case .normal:
-                button.titleLabel?.font = style.buttonStyle.titleFont
-                button.setTitleColor(style.buttonStyle.titleColor, for: .normal)
+                button.titleLabel?.font = style.buttonStyle.normalStyle.font.value
+                button.setTitleColor(style.buttonStyle.normalStyle.color.value, for: .normal)
             case .preferred:
-                button.titleLabel?.font = style.buttonStyle.preferredFont
-                button.setTitleColor(style.buttonStyle.preferredColor, for: .normal)
+                button.titleLabel?.font = style.buttonStyle.preferredStyle.font.value
+                button.setTitleColor(style.buttonStyle.preferredStyle.color.value, for: .normal)
             case .destructive:
-                button.titleLabel?.font = style.buttonStyle.destructiveFont
-                button.setTitleColor(style.buttonStyle.destructiveColor, for: .normal)
+                button.titleLabel?.font = style.buttonStyle.destructiveStyle.font.value
+                button.setTitleColor(style.buttonStyle.destructiveStyle.color.value, for: .normal)
             }
             button.isEnabled = config.enabled
             return button

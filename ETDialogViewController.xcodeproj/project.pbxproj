@@ -17,9 +17,10 @@
 		8933C7901EB5B82D000D00A4 /* ETDialogViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8933C7891EB5B82A000D00A4 /* ETDialogViewControllerTests.swift */; };
 		8E00D1992126B75700AA4286 /* DialogConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E00D1982126B75700AA4286 /* DialogConfig.swift */; };
 		8E00D19B2126B81300AA4286 /* DialogButtonConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E00D19A2126B81300AA4286 /* DialogButtonConfig.swift */; };
-		8E00D19D2126B96700AA4286 /* StyleConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E00D19C2126B96700AA4286 /* StyleConfig.swift */; };
+		8E00D19D2126B96700AA4286 /* DialogStyleConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E00D19C2126B96700AA4286 /* DialogStyleConfig.swift */; };
 		8E3A952E212704410054D229 /* ButtonStyleConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E3A952D212704410054D229 /* ButtonStyleConfig.swift */; };
-		8E3A9532212709480054D229 /* TitleStyleConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E3A9531212709480054D229 /* TitleStyleConfig.swift */; };
+		8E3A9532212709480054D229 /* DialogTitleStyleConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E3A9531212709480054D229 /* DialogTitleStyleConfig.swift */; };
+		8E3A953421271BCB0054D229 /* ButtonTitleConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E3A953321271BCB0054D229 /* ButtonTitleConfig.swift */; };
 		DD7502881C68FEDE006590AF /* ETDialogViewController.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52D6DA0F1BF000BD002C0205 /* ETDialogViewController.framework */; };
 		DD7502921C690C7A006590AF /* ETDialogViewController.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52D6D9F01BEFFFBE002C0205 /* ETDialogViewController.framework */; };
 /* End PBXBuildFile section */
@@ -73,9 +74,10 @@
 		8E00D18A2126B5F800AA4286 /* ETDialogViewControllerExample.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = ETDialogViewControllerExample.xcodeproj; path = ETDialogViewControllerExample/ETDialogViewControllerExample.xcodeproj; sourceTree = "<group>"; };
 		8E00D1982126B75700AA4286 /* DialogConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DialogConfig.swift; sourceTree = "<group>"; };
 		8E00D19A2126B81300AA4286 /* DialogButtonConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DialogButtonConfig.swift; sourceTree = "<group>"; };
-		8E00D19C2126B96700AA4286 /* StyleConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StyleConfig.swift; sourceTree = "<group>"; };
+		8E00D19C2126B96700AA4286 /* DialogStyleConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DialogStyleConfig.swift; sourceTree = "<group>"; };
 		8E3A952D212704410054D229 /* ButtonStyleConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonStyleConfig.swift; sourceTree = "<group>"; };
-		8E3A9531212709480054D229 /* TitleStyleConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleStyleConfig.swift; sourceTree = "<group>"; };
+		8E3A9531212709480054D229 /* DialogTitleStyleConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DialogTitleStyleConfig.swift; sourceTree = "<group>"; };
+		8E3A953321271BCB0054D229 /* ButtonTitleConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonTitleConfig.swift; sourceTree = "<group>"; };
 		AD2FAA261CD0B6D800659CF4 /* ETDialogViewController.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = ETDialogViewController.plist; sourceTree = "<group>"; };
 		AD2FAA281CD0B6E100659CF4 /* ETDialogViewControllerTests.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = ETDialogViewControllerTests.plist; sourceTree = "<group>"; };
 		DD75027A1C68FCFC006590AF /* ETDialogViewController-macOS Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "ETDialogViewController-macOS Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -220,9 +222,10 @@
 			children = (
 				8E00D1982126B75700AA4286 /* DialogConfig.swift */,
 				8E00D19A2126B81300AA4286 /* DialogButtonConfig.swift */,
-				8E00D19C2126B96700AA4286 /* StyleConfig.swift */,
+				8E00D19C2126B96700AA4286 /* DialogStyleConfig.swift */,
 				8E3A952D212704410054D229 /* ButtonStyleConfig.swift */,
-				8E3A9531212709480054D229 /* TitleStyleConfig.swift */,
+				8E3A9531212709480054D229 /* DialogTitleStyleConfig.swift */,
+				8E3A953321271BCB0054D229 /* ButtonTitleConfig.swift */,
 			);
 			path = Config;
 			sourceTree = "<group>";
@@ -550,8 +553,9 @@
 				8E00D19B2126B81300AA4286 /* DialogButtonConfig.swift in Sources */,
 				8E00D1992126B75700AA4286 /* DialogConfig.swift in Sources */,
 				8E3A952E212704410054D229 /* ButtonStyleConfig.swift in Sources */,
-				8E3A9532212709480054D229 /* TitleStyleConfig.swift in Sources */,
-				8E00D19D2126B96700AA4286 /* StyleConfig.swift in Sources */,
+				8E3A9532212709480054D229 /* DialogTitleStyleConfig.swift in Sources */,
+				8E00D19D2126B96700AA4286 /* DialogStyleConfig.swift in Sources */,
+				8E3A953421271BCB0054D229 /* ButtonTitleConfig.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

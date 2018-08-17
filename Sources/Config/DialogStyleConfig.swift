@@ -21,7 +21,7 @@ public class DialogStyleConfig {
     public let maxContainerSize: CGSize
     public let cornerRadius: CGFloat
     public let blurEffect: UIVisualEffect?
-    public let titleStyle: TitleStyleConfig
+    public let titleStyle: DialogTitleStyleConfig
     public let buttonStyle: ButtonStyleConfig
 
     // MARK: - Initialization
@@ -33,7 +33,7 @@ public class DialogStyleConfig {
                 maxContainerSize: CGSize = CGSize(width: UIScreen.main.bounds.width - 30,
                                                   height: UIScreen.main.bounds.height - 50),
                 blurEffect: UIBlurEffect? = UIBlurEffect(style: .dark),
-                titleStyle: TitleStyleConfig = TitleStyleConfig(),
+                titleStyle: DialogTitleStyleConfig = DialogTitleStyleConfig(),
                 buttonStyle: ButtonStyleConfig = ButtonStyleConfig()) {
         self.backgroundColor = backgroundColor
         self.opacity = opacity

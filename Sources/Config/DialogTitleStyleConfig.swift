@@ -1,5 +1,5 @@
 //
-//  TitleStyleConfig.swift
+//  DialogTitleStyleConfig.swift
 //  ETDialogViewController-iOS
 //
 //  Created by Beles on 17/08/2018.
@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-public class TitleStyleConfig {
+public class DialogTitleStyleConfig {
     public let font: UIFont
     public let color: UIColor
 

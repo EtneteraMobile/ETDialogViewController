@@ -11,29 +11,20 @@ import UIKit
 
 public class ButtonStyleConfig {
     public let backgroundColor: UIColor
-    public let titleColor: UIColor
-    public let preferredColor: UIColor
-    public let destructiveColor: UIColor
     public let borderColor: UIColor
-    public let titleFont: UIFont
-    public let preferredFont: UIFont
-    public let destructiveFont: UIFont
+    public let normalStyle: ButtonTitleConfig
+    public let preferredStyle: ButtonTitleConfig
+    public let destructiveStyle: ButtonTitleConfig
 
     public init(backgroundColor: UIColor = .white,
-                titleColor: UIColor = UIView().tintColor,
-                preferredColor: UIColor = UIView().tintColor,
-                destructiveColor: UIColor = .red,
-                borderColor: UIColor = .gray,
-                titleFont: UIFont = UIFont.systemFont(ofSize: 16),
-                preferredFont: UIFont = UIFont.boldSystemFont(ofSize: 16),
-                destructiveFont: UIFont = UIFont.boldSystemFont(ofSize: 16)) {
+                normalStyle: ButtonTitleConfig = ButtonTitleConfig(font: .normal, color: .normal),
+                preferredStyle: ButtonTitleConfig = ButtonTitleConfig(font: .preferred, color: .preferred),
+                destructiveStyle: ButtonTitleConfig = ButtonTitleConfig(font: .destructive, color: .destructive),
+                borderColor: UIColor = .gray) {
         self.backgroundColor = backgroundColor
-        self.titleFont = titleFont
-        self.titleColor = titleColor
-        self.preferredColor = preferredColor
-        self.destructiveColor = destructiveColor
         self.borderColor = borderColor
-        self.preferredFont = preferredFont
-        self.destructiveFont = destructiveFont
+        self.normalStyle = normalStyle
+        self.preferredStyle = preferredStyle
+        self.destructiveStyle = destructiveStyle
     }
 }
