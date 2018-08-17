@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "52D6D9E11BEFFF6E002C0205"
-               BuildableName = "{PROJECT}.framework"
-               BlueprintName = "{PROJECT}-watchOS"
-               ReferencedContainer = "container:{PROJECT}.xcodeproj">
+               BuildableName = "ETDialogViewController.framework"
+               BlueprintName = "ETDialogViewController-watchOS"
+               ReferencedContainer = "container:ETDialogViewController.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -49,9 +49,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "52D6D9E11BEFFF6E002C0205"
-            BuildableName = "{PROJECT}.framework"
-            BlueprintName = "{PROJECT}-watchOS"
-            ReferencedContainer = "container:{PROJECT}.xcodeproj">
+            BuildableName = "ETDialogViewController.framework"
+            BlueprintName = "ETDialogViewController-watchOS"
+            ReferencedContainer = "container:ETDialogViewController.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -67,9 +67,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "52D6D9E11BEFFF6E002C0205"
-            BuildableName = "{PROJECT}.framework"
-            BlueprintName = "{PROJECT}-watchOS"
-            ReferencedContainer = "container:{PROJECT}.xcodeproj">
+            BuildableName = "ETDialogViewController.framework"
+            BlueprintName = "ETDialogViewController-watchOS"
+            ReferencedContainer = "container:ETDialogViewController.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </ProfileAction>

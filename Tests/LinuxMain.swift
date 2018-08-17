@@ -1,6 +1,6 @@
 import XCTest
-@testable import {PROJECT}Tests
+@testable import ETDialogViewControllerTests
 
 XCTMain([
-    testCase({PROJECT}Tests.allTests),
+    testCase(ETDialogViewControllerTests.allTests),
 ])
