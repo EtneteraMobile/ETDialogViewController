@@ -27,12 +27,12 @@ public class DialogStyleConfig {
     // MARK: - Initialization
 
     public init(backgroundColor: UIColor = .white,
-                opacity: Float = 0.9,
+                opacity: Float = 0.97,
                 cornerRadius: CGFloat = 10,
                 minContainerSize: CGSize = CGSize(width: 100, height: 100),
                 maxContainerSize: CGSize = CGSize(width: UIScreen.main.bounds.width - 30,
                                                   height: UIScreen.main.bounds.height - 50),
-                blurEffect: UIBlurEffect? = UIBlurEffect(style: .dark),
+                blurEffect: UIBlurEffect? = nil,
                 titleStyle: DialogTitleStyleConfig = DialogTitleStyleConfig(),
                 buttonStyle: ButtonStyleConfig = ButtonStyleConfig()) {
         self.backgroundColor = backgroundColor

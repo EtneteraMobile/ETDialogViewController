@@ -106,6 +106,10 @@ open class DialogViewController: UIViewController {
     }
 
     private func setupBackground() {
+        if style.blurEffect == nil {
+            backgroundView.contentView.backgroundColor = .black
+            backgroundView.contentView.layer.opacity = 0.5
+        }
         view.addSubview(backgroundView)
         backgroundView.translatesAutoresizingMaskIntoConstraints = false
         backgroundView.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
@@ -117,14 +121,10 @@ open class DialogViewController: UIViewController {
     private func setupDialogView() {
         dialogView.backgroundColor = style.backgroundColor
         dialogView.layer.cornerRadius = style.cornerRadius
-        dialogView.layer.shadowColor = UIColor.black.cgColor
-        dialogView.layer.shadowOpacity = 1
-        dialogView.layer.shadowOffset = .zero
-        dialogView.layer.shadowRadius = 10
         dialogView.clipsToBounds = true
         dialogView.layer.opacity = style.opacity
 
-        backgroundView.contentView.addSubview(dialogView)
+        view.addSubview(dialogView)
         dialogView.translatesAutoresizingMaskIntoConstraints = false
         dialogView.widthAnchor.constraint(greaterThanOrEqualToConstant: style.minContainerSize.width).isActive = true
         dialogView.heightAnchor.constraint(greaterThanOrEqualToConstant: style.minContainerSize.height).isActive = true

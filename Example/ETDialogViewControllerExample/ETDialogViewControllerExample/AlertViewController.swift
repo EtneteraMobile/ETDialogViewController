@@ -18,11 +18,11 @@ class AlertViewController: DialogViewController {
     private func setupContent() {
         let content: () -> UIView = {
             let textView = UITextView()
-//            textView.isSelectable = false
             textView.isScrollEnabled = false
             textView.isEditable = false
             textView.textAlignment = .center
             textView.text = """
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque rhoncus viverra suscipit. Nam tempus faucibus ligula ut porta. Vivamus a pharetra eros, in dictum orci. Sed vel porta turpis.
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque rhoncus viverra suscipit. Nam tempus faucibus ligula ut porta. Vivamus a pharetra eros, in dictum orci. Sed vel porta turpis.
 """
             return textView
@@ -30,10 +30,10 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque rhoncus vi
         let closeButton = DialogButtonConfig(title: "OK", style: .preferred, enabled: true) {
             print("clicked on button")
         }
-        let cancelButton = DialogButtonConfig(title: "Cancel", style: .normal, enabled: true) {
+        let cancelButton = DialogButtonConfig(title: "Cancel button", style: .normal, enabled: true) {
             print("clicked on button")
         }
-        let destructiveButton = DialogButtonConfig(title: "Remove", style: .destructive, enabled: true) {
+        let destructiveButton = DialogButtonConfig(title: "Remove button long text", style: .destructive, enabled: true) {
             print("clicked on button")
         }
         let config = DialogConfig(title: "Testuju trochu delší nadpis 🧐", content: content, buttons: [closeButton, cancelButton, destructiveButton])
