@@ -53,7 +53,7 @@ public class ButtonTitleConfig {
     public let font: ButtonTitleFont
     public let color: ButtonTitleColor
 
-    public init(font: ButtonTitleFont, color: ButtonTitleColor) {
+    public init(font: ButtonTitleFont = .normal, color: ButtonTitleColor) {
         self.font = font
         self.color = color
     }

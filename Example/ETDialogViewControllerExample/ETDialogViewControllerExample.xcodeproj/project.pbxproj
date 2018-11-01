@@ -14,6 +14,8 @@
 		8E00D1752126B5F800AA4286 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8E00D1732126B5F800AA4286 /* LaunchScreen.storyboard */; };
 		8E00D1802126B5F800AA4286 /* ETDialogViewControllerExampleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E00D17F2126B5F800AA4286 /* ETDialogViewControllerExampleTests.swift */; };
 		8E00D1952126B61400AA4286 /* ETDialogViewController.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8E00D1942126B61400AA4286 /* ETDialogViewController.framework */; };
+		8E02B2732137F2370054835A /* AlertViewController2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E02B2722137F2370054835A /* AlertViewController2.swift */; };
+		8E02B2752137FECC0054835A /* AlertViewController3.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E02B2742137FECC0054835A /* AlertViewController3.swift */; };
 		8EC7B6F62126C451000AB650 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EC7B6F52126C451000AB650 /* HomeViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -39,6 +41,8 @@
 		8E00D17F2126B5F800AA4286 /* ETDialogViewControllerExampleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ETDialogViewControllerExampleTests.swift; sourceTree = "<group>"; };
 		8E00D1812126B5F800AA4286 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8E00D1942126B61400AA4286 /* ETDialogViewController.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = ETDialogViewController.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8E02B2722137F2370054835A /* AlertViewController2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertViewController2.swift; sourceTree = "<group>"; };
+		8E02B2742137FECC0054835A /* AlertViewController3.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertViewController3.swift; sourceTree = "<group>"; };
 		8EC7B6F52126C451000AB650 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -86,6 +90,8 @@
 				8E00D16A2126B5F600AA4286 /* AppDelegate.swift */,
 				8EC7B6F52126C451000AB650 /* HomeViewController.swift */,
 				8E00D16C2126B5F600AA4286 /* AlertViewController.swift */,
+				8E02B2722137F2370054835A /* AlertViewController2.swift */,
+				8E02B2742137FECC0054835A /* AlertViewController3.swift */,
 				8E00D16E2126B5F600AA4286 /* Main.storyboard */,
 				8E00D1712126B5F800AA4286 /* Assets.xcassets */,
 				8E00D1732126B5F800AA4286 /* LaunchScreen.storyboard */,
@@ -214,7 +220,9 @@
 			files = (
 				8E00D16D2126B5F600AA4286 /* AlertViewController.swift in Sources */,
 				8E00D16B2126B5F600AA4286 /* AppDelegate.swift in Sources */,
+				8E02B2732137F2370054835A /* AlertViewController2.swift in Sources */,
 				8EC7B6F62126C451000AB650 /* HomeViewController.swift in Sources */,
+				8E02B2752137FECC0054835A /* AlertViewController3.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

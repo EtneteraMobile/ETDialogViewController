@@ -21,10 +21,7 @@ class AlertViewController: DialogViewController {
             textView.isScrollEnabled = false
             textView.isEditable = false
             textView.textAlignment = .center
-            textView.text = """
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque rhoncus viverra suscipit. Nam tempus faucibus ligula ut porta. Vivamus a pharetra eros, in dictum orci. Sed vel porta turpis.
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque rhoncus viverra suscipit. Nam tempus faucibus ligula ut porta. Vivamus a pharetra eros, in dictum orci. Sed vel porta turpis.
-"""
+            textView.text = "Tohle je příklad, jak by takový dialog mohl vypadat. Můžu tady zadat i trochu delší text, vše se přizpůsobuje contentu. Ještě toho trochu zbývá na dodělání, ale nevypadá to špatně, ne?"
             return textView
         }
         let closeButton = DialogButtonConfig(title: "OK", style: .preferred, enabled: true) {

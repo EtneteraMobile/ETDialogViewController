@@ -22,9 +22,32 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window!.makeKeyAndVisible()
 
         let style = DialogStyleConfig()
-        let alertViewController = AlertViewController(style: style)
+
+        let dialogTitleStyle = DialogTitleStyleConfig(font: UIFont.boldSystemFont(ofSize: 26), color: UIColor(red: 78/255, green: 205/255, blue: 196/255, alpha: 1))
+        let buttonStyle = ButtonStyleConfig(backgroundColor: UIColor(red: 85/255, green: 98/255, blue: 112/255, alpha: 1),
+                                            normalStyle: ButtonTitleConfig(color: .custom(value: UIColor(red: 1, green: 107/255, blue: 107/255, alpha: 1))),
+                                            preferredStyle: ButtonTitleConfig(color: .custom(value: UIColor(red: 199/255, green: 244/255, blue: 100/255, alpha: 1))),
+                                            borderColor: UIColor(red: 116/255, green: 133/255, blue: 153/255, alpha: 1))
+
+        let style2 = DialogStyleConfig(backgroundColor: UIColor(red: 85/255, green: 98/255, blue: 112/255, alpha: 1),
+                                       opacity: 1,
+                                       cornerRadius: 30,
+                                    blurEffect: UIBlurEffect(style: .extraLight), titleStyle: dialogTitleStyle, buttonStyle: buttonStyle)
+
+
+        let dialogTitleStyle2 = DialogTitleStyleConfig(font: UIFont.boldSystemFont(ofSize: 20), color: UIColor(red: 0, green: 106/255, blue: 176/255, alpha: 1))
+        let buttonStyle2 = ButtonStyleConfig(backgroundColor: UIColor(red: 217/255, green: 206/255, blue: 178/255, alpha: 1),
+                                            borderColor: UIColor(red: 148/255, green: 140/255, blue: 117/255, alpha: 1))
+
+        let style3 = DialogStyleConfig(backgroundColor: UIColor(red: 217/255, green: 206/255, blue: 178/255, alpha: 1),
+                                       opacity: 1,
+                                       cornerRadius: 10,
+                                       blurEffect: UIBlurEffect(style: .dark), titleStyle: dialogTitleStyle2, buttonStyle: buttonStyle2)
+
+        let alertViewController = AlertViewController3(style: style3)
         alertViewController.modalPresentationStyle = .overCurrentContext
         homeViewController.present(alertViewController, animated: true, completion: nil)
+
         return true
     }
 
